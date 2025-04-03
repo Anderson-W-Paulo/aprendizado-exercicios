@@ -1,0 +1,19 @@
+Nome Usuário : ['asdasd', 'qweqwe', 'yuiyui']
+Domínio : ['asd', 'qweqwe', 'tyyui']
+Extensão Domínio : ['com', 'com', 'com']
+Nome Usuário : ['teste122', 'teste2']
+Domínio : ['teste', 'teste']
+Extensão Domínio : ['com', 'com']
+
+
+5. Salvar Arquivo de Texto com Codificação Específica
+Você pode especificar a codificação do arquivo ao salvá-lo. O Python permite usar diversas codificações, como 'utf-8', 'latin-1', 'ascii', etc.
+
+Exemplo: Salvar texto com codificação UTF-8
+python
+Copiar
+Editar
+texto = "Olá, mundo!"
+
+with open('arquivo_utf8.txt', 'w', encoding='utf-8') as file:
+    file.write(texto)
