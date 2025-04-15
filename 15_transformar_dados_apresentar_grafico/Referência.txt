@@ -1,0 +1,17 @@
+1) Valores: 
+	Total valor x Fabricante (pizza)
+	T. valor x segmento (barra)
+	T. valor x categoria ( barra horizontal)
+2) Indicadores(mais provável):
+	O que influência mais o T. vendas( talvez principais produtos) a Aumentar: T. valor x Segmento, qual segmento? 
+	O que influência mais T. vendas( produtos principais, menos vender) ao diminuir: T. valor x categoria
+
+3) Lojas
+	Quais lojas venderam mais e o que venderam ( faixa)
+
+4) Localização
+	Locais onde mais venderam (mapa)
+ 
+
+
+	
