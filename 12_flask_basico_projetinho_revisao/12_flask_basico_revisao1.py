@@ -28,11 +28,11 @@ def get_tarefas():
 def add_tarefas():
     dado = request.get_json() # Ler o corpo da requisição como JSON (POST/PUT)
     tarefa = dado.get('tarefa') # armazena o valor acessado na chave 'tarefa' no json enviado
-    if tarefa:
+    if tarefa:  # forma enxuta de (if tarefa is not None and tarefa != "":) / se o json enviado for vázio, esse if impedi que uma tarefa sem conteúdo seja adicionado
         if 'tarefas' not in session:
             session['tarefas'] = []
         session['tarefas'].append(tarefa)
-        session.modified = True # força Flaks a salvar a sessão, mesmo que ele ache que nada mudou /( avisa ao flask que a sessão foi alterada manualmente, mesmo que o objeto session não pareça ter mudado
+        session.modified = True # força Flaks a salvar a sessão, mesmo que ele ache que nada mudou /( avisa ao flask que a sessão foi alterada manualmente, mesmo que o objeto session não pareça ter mudado)
         return jsonify({'messagem': 'Tarefa Adicionada!', 'tarefas': session['tarefas']})
     return jsonify({'error': 'Campo "tarefa" é obrigatório'}), 400
 
@@ -41,7 +41,7 @@ def add_tarefas():
 def del_tarefas(id_tarefa):
     if 'tarefas' in session and 0 <= id_tarefa < len(session['tarefas']):
         remover = session['tarefas'].pop(id_tarefa)
-        session.modified = True
+        session.modified = True # informa ao Flask que houve uma modificação manual na sessão ( faz com que o cookie seja atualizado no navegador)
         return jsonify({'messagem': f'Tarefa "{remover}" removida com sucesso'})
     return jsonify({'erro': 'ID inválido'}), 400
 
