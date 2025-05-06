@@ -30,5 +30,4 @@ axes[1, 1].set_title('Total Venda x Ano')
 axes[1, 1].plot(df_agrupado_linha.index, df_agrupado_linha.values)
 axes[1, 1].legend()
 
-
 plt.show()
